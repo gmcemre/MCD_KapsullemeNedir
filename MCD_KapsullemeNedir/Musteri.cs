@@ -10,6 +10,26 @@ namespace MCD_KapsullemeNedir
     {
         //Class => Field (Alan)
         int id;
+
+        public  Musteri()
+        {
+            this.id = IDuret();
+        }
+
+        
+
+        public int ID
+        {
+            get
+            {
+                return this.id;
+            }
+            private set
+            {
+                this.id = value;
+            }
+        }
+
         public string isim;
         public string soyisim;
 
@@ -33,7 +53,11 @@ namespace MCD_KapsullemeNedir
 
         }
 
-        
+        private int IDuret()
+        {
+            Random rnd = new Random();
+            return rnd.Next(10000, 90000);
+        }
 
     }
 }
