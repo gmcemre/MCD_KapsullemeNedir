@@ -31,7 +31,20 @@ namespace MCD_KapsullemeNedir
         }
 
         public string isim;
-        public string soyisim;
+        private string _soyisim;
+        public string Soyisim
+        {
+            get 
+            {
+                return this._soyisim;
+            }
+            set
+            {
+                this._soyisim = value;
+                this.emailAdres = string.Format("{0}.{1}@hotmail.com", isim, _soyisim);
+            }
+        }
+
 
         //Class => Property
         private string emailAdres;
@@ -51,6 +64,47 @@ namespace MCD_KapsullemeNedir
             }
 
 
+        }
+        //Ara Odev
+
+        private string _tcKimlikNumarasi;
+        public string TCKimlikNumarasi
+        {
+            get { return _tcKimlikNumarasi.Substring(0, 3)+"********"; }
+            set
+            {
+                if (value .Length ==11)
+                {
+                    
+                    bool bayrak = false;
+                    for (int i = 0; i < value.Length; i++)
+                    {
+                        bool karakterKontrol = char.IsNumber(value[i]);
+                        if (karakterKontrol )
+                        {
+                            //sayılsal değer demektir...
+                        }
+                        else
+                        {
+                            bayrak = true;
+                            break;
+                        }
+                    }
+
+                    if (bayrak)
+                    {
+                        Console.WriteLine("TC Kimlik Numarası içindeki değerler sayısal olmalıdır...");
+                    }
+                    else
+                    {
+                        this._tcKimlikNumarasi = value;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("TC Kimlik Numarası 11 hane olmalıdır...");
+                }
+            }
         }
 
         private int IDuret()
