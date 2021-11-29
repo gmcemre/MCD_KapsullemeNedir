@@ -70,7 +70,13 @@ namespace MCD_KapsullemeNedir
         private string _tcKimlikNumarasi;
         public string TCKimlikNumarasi
         {
-            get { return _tcKimlikNumarasi.Substring(0, 3)+"********"; }
+            get 
+            {
+                if (_tcKimlikNumarasi != null)
+                    return _tcKimlikNumarasi.Substring(0, 3) + "********";
+                else
+                    return "";
+            }
             set
             {
                 if (value .Length ==11)

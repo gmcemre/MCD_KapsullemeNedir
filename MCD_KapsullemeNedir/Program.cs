@@ -38,7 +38,7 @@ namespace MCD_KapsullemeNedir
             Console.WriteLine(M1.EmailAdres);
 
 
-            M1.TCKimlikNumarasi = "12o45678999";
+            M1.TCKimlikNumarasi = "12345678999";
             Console.WriteLine(M1 .TCKimlikNumarasi);
             Console.ReadKey();
 
